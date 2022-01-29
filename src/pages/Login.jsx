@@ -7,14 +7,15 @@ import { auth } from '../firebase'
 
 import { signInWithEmailAndPassword } from 'firebase/auth'
 
-
+import { useDispatch } from 'react-redux'
+import { itemsAction } from '../store'
 const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
    
   const navigate =  useNavigate()
 
-
+const dispatch = useDispatch();
 
 const loginHandler = (e) => {
     e.preventDefault();
@@ -24,6 +25,7 @@ const loginHandler = (e) => {
             const user = await signInWithEmailAndPassword(auth , email,password );
             if (user) {
                 navigate('/')
+                dispatch(itemsAction.loginAcount())
             }
           } catch (error) {
               alert('the email is not exit ')
@@ -40,7 +42,7 @@ const loginHandler = (e) => {
 
     return (
         <div className='flex h-screen'>
-            <div className="flex w-5/12 items-center justify-center">
+            <div className="w-full flex lg:w-5/12 items-center justify-center">
                 <div className="">
                 <Link to='/' className='text-center w-28 ' ><h1 className='mb-16 text-3xl font-semibold w-full'><img src={logo} className='w-32 mx-auto' alt="" /></h1></Link>
                 <form onSubmit={loginHandler} className='flex flex-col gap-y-5'>
@@ -68,14 +70,14 @@ const loginHandler = (e) => {
                 
                 </div>
             </div>
-            <div className="h-full flex-1 w-full relative ">
+            <div className="hidden lg:block lg:h-full lg:flex-1 lg:w-full lg:relative ">
                 <div className="w-full h-full absolute bg-gradient-to-b from-zinc-200 to-zinc-900 opacity-60"></div>
                 <img src={img10} className='h-full w-full object-cover' alt="" />
 <div className="absolute w-full h-full  top-0  text-white">
-    <div className="w-full h-full  flex flex-col justify-center pl-44 gap-y-2">
+    <div className="w-full h-full  flex flex-col justify-center pl-10 lg:pl-30  lg:justify-center  gap-y-2">
 
-    <h1 className='text-7xl w-96'>Find your own hotel</h1>
-    <p className='text-sm opacity-90'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, placeat.</p>
+    <h1 className='lg:text-6xl lg:w-full  '>Find your own hotel</h1>
+    <p className='lg:text-lg opacity-90 w-[600px]'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, placeat.</p>
     </div>
 </div>
             </div>

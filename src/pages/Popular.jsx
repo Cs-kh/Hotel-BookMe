@@ -18,8 +18,8 @@ const Popular = () => {
     }, [location.pathname])
     return (
         <div className='mb-12'>
-        <div className="w-5/6 mx-auto">
-            <div className="my-8">
+        <div className="w-full mx-auto">
+            <div className="my-8 px-6">
                 <h1 className='text-3xl font-semibold pb-4'>The title of news</h1>
                 <ul className='flex gap-x-6'>
                     <li><Link to='/news/featured' className={`py-1  ${activeTab === 'featured' ? ' opacity-80' :'opacity-50'}`} onClick={() => setActiveTab('featured')}>Featured</Link></li>
@@ -27,14 +27,14 @@ const Popular = () => {
                 </ul>
             </div>
             {/* --------card section ----------- */}
-            <div className="flex gap-x-1 justify-around flex-wrap gap-y-8">
+            <div className="flex gap-x-10  justify-center  flex-wrap gap-y-8">
                 {/* -------- card --------- */}
-                <div className="w-1/4 h-500 object-contain rounded-md relative  flex items-end"> 
+                <div className="lg:w-[400px] md:w-[280px] w-[300px]  h-400 object-contain rounded-md relative  flex items-end"> 
                 <div className="w-full h-full absolute bg-gradient-to-b from-zinc-200 to-zinc-900 opacity-60"></div>
                         <img src={img10} className='w-full h-full object-cover rounded-md ' alt="" />
                       <div className="absolute pl-10 text-white  w-full">
                       <h1 className='text-2xl font-bold'>Here is the title</h1>
-                          <div className="flex justify-between  items-center my-6 w-full pr-4  ">
+                          <div className="flex  items-center my-6 w-full pr-4  ">
 <div className="flex gap-x-6 w-full ">
 <img src={img11} className='rounded-full w-10 h-10' alt="" />
 <div className="">
@@ -51,7 +51,7 @@ const Popular = () => {
                 </div>
                 {/* -------- end of card-------------- */}
                 {/* -------- card --------- */}
-                <div className="w-1/4 h-500 object-contain rounded-md relative  flex items-end"> 
+                <div className="lg:w-[400px] md:w-[280px] w-[300px] h-400 object-contain rounded-md relative  flex items-end"> 
                 <div className="w-full h-full absolute bg-gradient-to-b from-zinc-200 to-zinc-900 opacity-60"></div>
                         <img src={img10} className='w-full h-full object-cover rounded-md ' alt="" />
                       <div className="absolute pl-10 text-white w-full ">
@@ -73,7 +73,7 @@ const Popular = () => {
                 </div>
                 {/* -------- end of card-------------- */}
                 {/* -------- card --------- */}
-                <div className="w-1/4 h-500 object-contain rounded-md relative  flex items-end"> 
+                <div className="lg:w-[400px] md:w-[280px] w-[300px] h-400 object-contain rounded-md relative  flex items-end"> 
                 <div className="w-full h-full absolute bg-gradient-to-b from-zinc-200 to-zinc-900 opacity-60"></div>
                         <img src={img10} className='w-full h-full object-cover rounded-md ' alt="" />
                       <div className="absolute pl-10 text-white w-full">

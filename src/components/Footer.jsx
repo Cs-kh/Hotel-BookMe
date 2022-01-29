@@ -6,7 +6,7 @@ import { BsTwitter } from "react-icons/bs";
 const Footer = () => {
   return (
     <div className="bg-black">
-      <div className="w-2/3 mx-auto py-12 flex justify-between">
+      <div className="w-2/3 mx-auto py-12 flex justify-between flex-wrap gap-y-8">
         <div className="flex flex-col text-white gap-y-6">
           <div className="flex flex-col gap-y-1">
             <Link to="/" className="text-xl font-semibold">

@@ -18,8 +18,8 @@ const News = () => {
     }, [location.pathname])
     return (
         <div className='mb-12'>
-            <div className="w-5/6 mx-auto">
-                <div className="my-8">
+            <div className="w-full mx-auto">
+                <div className="my-8 px-6">
                     <h1 className='text-3xl font-semibold pb-4'>The title of news</h1>
                     <ul className='flex gap-x-6'>
                         <li><Link to='/news/featured' className={`py-1  ${activeTab === 'featured' ? ' opacity-80' :'opacity-50'}`} onClick={() => setActiveTab('featured')}>Featured</Link></li>
@@ -27,19 +27,19 @@ const News = () => {
                     </ul>
                 </div>
                 {/* --------card section ----------- */}
-                <div className="flex gap-x-14 justify-center flex-wrap gap-y-8">
+                <div className="flex gap-x-4 items-center justify-center md:gap-x-10 flex-wrap gap-y-8">
                     {/* -------- card --------- */}
-                    <div className="w-2/5 h-96 object-contain rounded-md relative  flex items-end"> 
+                    <div className="w-[300px] lg:w-[400px] xl:w-[500px] h-96 object-contain rounded-md relative  flex items-end"> 
                     <div className="w-full h-full absolute bg-gradient-to-b from-zinc-200 to-zinc-900 opacity-60"></div>
                             <img src={img10} className='w-full h-full object-cover rounded-md ' alt="" />
                           <div className="absolute pl-10 text-white ">
                               <h1 className='text-2xl'>Here is the name of the news</h1>
                               <p className='text-sm opacity-90'>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                              <div className="flex justify-between  items-center my-6">
-<div className="flex gap-x-6">
+                              <div className="flex gap-x-6  items-center my-6">
+<div className="flex gap-x-3">
     <img src={img11} className='rounded-full w-10 h-10' alt="" />
     <div className="">
-    <h6>Danil Kozlove</h6>
+    <h6 className='text-sm md:text-base'>Danil Kozlove</h6>
     <span className='opacity-90 text-xs'>05 Jan 2020</span>
     </div>
 </div>
@@ -52,17 +52,17 @@ const News = () => {
                     </div>
                     {/* -------- end of card-------------- */}
                     {/* -------- card --------- */}
-                    <div className="w-2/5 h-96 object-contain rounded-md relative  flex items-end"> 
+                    <div className="w-[300px] lg:w-[400px] xl:w-[500px] h-96 object-contain rounded-md relative  flex items-end"> 
                     <div className="w-full h-full absolute bg-gradient-to-b from-zinc-200 to-zinc-900 opacity-60"></div>
                             <img src={img10} className='w-full h-full object-cover rounded-md ' alt="" />
                           <div className="absolute pl-10 text-white ">
                               <h1 className='text-2xl'>Here is the name of the news</h1>
                               <p className='text-sm opacity-90'>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                              <div className="flex justify-between  items-center my-6">
-<div className="flex gap-x-6">
+                              <div className="flex gap-x-6  items-center my-6">
+<div className="flex gap-x-3">
     <img src={img11} className='rounded-full w-10 h-10' alt="" />
     <div className="">
-    <h6>Danil Kozlove</h6>
+    <h6 className='text-sm md:text-base'>Danil Kozlove</h6>
     <span className='opacity-90 text-xs'>05 Jan 2020</span>
     </div>
 </div>
@@ -75,17 +75,17 @@ const News = () => {
                     </div>
                     {/* -------- end of card-------------- */}
                     {/* -------- card --------- */}
-                    <div className="w-2/5 h-96 object-contain rounded-md relative  flex items-end"> 
+                    <div className="w-[300px] lg:w-[400px] xl:w-[500px] h-96 object-contain rounded-md relative  flex items-end"> 
                     <div className="w-full h-full absolute bg-gradient-to-b from-zinc-200 to-zinc-900 opacity-60"></div>
                             <img src={img10} className='w-full h-full object-cover rounded-md ' alt="" />
                           <div className="absolute pl-10 text-white ">
                               <h1 className='text-2xl'>Here is the name of the news</h1>
                               <p className='text-sm opacity-90'>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                              <div className="flex justify-between  items-center my-6">
-<div className="flex gap-x-6">
+                              <div className="flex gap-x-6  items-center my-6">
+<div className="flex gap-x-3">
     <img src={img11} className='rounded-full w-10 h-10' alt="" />
     <div className="">
-    <h6>Danil Kozlove</h6>
+    <h6 className='text-sm md:text-base'>Danil Kozlove</h6>
     <span className='opacity-90 text-xs'>05 Jan 2020</span>
     </div>
 </div>
@@ -98,17 +98,17 @@ const News = () => {
                     </div>
                     {/* -------- end of card-------------- */}
                     {/* -------- card --------- */}
-                    <div className="w-2/5 h-96 object-contain rounded-md relative  flex items-end"> 
+                    <div className="w-[300px] lg:w-[400px] xl:w-[500px] h-96 object-contain rounded-md relative  flex items-end"> 
                     <div className="w-full h-full absolute bg-gradient-to-b from-zinc-200 to-zinc-900 opacity-60"></div>
                             <img src={img10} className='w-full h-full object-cover rounded-md ' alt="" />
                           <div className="absolute pl-10 text-white ">
                               <h1 className='text-2xl'>Here is the name of the news</h1>
                               <p className='text-sm opacity-90'>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                              <div className="flex justify-between  items-center my-6">
-<div className="flex gap-x-6">
+                              <div className="flex gap-x-6  items-center my-6">
+<div className="flex gap-x-3">
     <img src={img11} className='rounded-full w-10 h-10' alt="" />
     <div className="">
-    <h6>Danil Kozlove</h6>
+    <h6 className='text-sm md:text-base'>Danil Kozlove</h6>
     <span className='opacity-90 text-xs'>05 Jan 2020</span>
     </div>
 </div>

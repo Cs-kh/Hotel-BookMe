@@ -5,6 +5,8 @@ import img12 from '../assets/card/12.jpg'
 import {AiFillStar} from 'react-icons/ai'
 import {useDispatch} from 'react-redux'
 import {itemsAction} from '../store/index'
+import { auth } from '../firebase.js'
+import { onAuthStateChanged } from 'firebase/auth'
 const HotelInfo = () => {
     const param =useParams()
     const [card,setCard] = useState([])
@@ -19,7 +21,8 @@ const HotelInfo = () => {
        cardFilter()
     }, [param.id])
     const addHotel = () => {
-        dispatch(itemsAction.addInfo({
+     onAuthStateChanged(auth,(currentUser) => {
+         currentUser ?  dispatch(itemsAction.addInfo({
             id:param.id,
             name:card[0].name,
             city:card[0].city,
@@ -29,20 +32,22 @@ const HotelInfo = () => {
             location:card[0].location,
             imgs:card[0].imgs
 
-        }))
+        })) : alert('please login ')
+       
+     })
     }
     return (
         <div className='mb-12'>
             <div className="w-5/6 mx-auto">
            {
                card.map((item , index) => (
-                   <div key={item + index} className="flex gap-x-16">
-        <div className="flex-1  flex flex-wrap gap-y-4">
+                   <div key={item + index} className="flex gap-x-16 flex-col pt-10 lg:flex-row ">
+        <div className="flex-1  flex flex-wrap gap-y-4 ">
          <div className="w-full relative">
          <div className="w-full h-full absolute bg-gradient-to-b from-zinc-200 to-zinc-900 opacity-60"></div>
              <img src={item.imgs} className='w-full h-400 object-cover rounded-md' alt="" />
          </div>
-         <div className="w-full flex gap-x-5 flex-wrap gap-y-4">
+         <div className="hidden lg:w-full lg:flex lg:gap-x-5 lg:flex-wrap lg:gap-y-4">
 <div className="w-20 h-20"><img src={img12} className='w-full h-full object-cover rounded-md' alt="" /></div>
 <div className="w-20 h-20"><img src={img12} className='w-full h-full object-cover rounded-md' alt="" /></div>
 <div className="w-20 h-20"><img src={img12} className='w-full h-full object-cover rounded-md' alt="" /></div>
@@ -53,7 +58,7 @@ const HotelInfo = () => {
 <div className="w-20 h-20"><img src={img12} className='w-full h-full object-cover rounded-md' alt="" /></div>
          </div>
         </div>
-        <div className="w-1/3 flex flex-col ">
+        <div className="lg:w-1/3 flex flex-col w-full  pt-8 lg:pt-0 ">
 <div className=" flex gap-y-1.5 flex-col  border-b-2 pb-6">
     <div className="flex items-center gap-x-10">
     <h3 className='text-2xl font-semibold'>{item.name}</h3>

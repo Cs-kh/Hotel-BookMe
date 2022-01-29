@@ -24,12 +24,12 @@ useEffect(() => {
 }, [])
   return (
     <div>
-      <div className="w-5/6 mx-auto">
-          <div className="flex gap-x-20">
-<button className="bg-black px-4 text-lg py-1 text-white rounded-md" onClick={() => sortData('price')} >Sort By Price</button>
-<button className="bg-black px-4 text-lg py-1 text-white rounded-md" onClick={() => sortData('rating')} >Sort By Rating</button>
+      <div className="w-full mx-auto">
+          <div className="flex pt-10 gap-x-20 px-6">
+<button className="bg-black md:px-4 md:text-lg py-1 px-2 text-white rounded-md" onClick={() => sortData('price')} >Sort By Price</button>
+<button className="bg-black md:px-4 md:text-lg py-1 px-2 text-white rounded-md" onClick={() => sortData('rating')} >Sort By Rating</button>
           </div>
-        <div className="flex gap-x-8 gap-y-5 flex-wrap my-8">
+        <div className="flex gap-x-8 gap-y-4 px-6 flex-wrap my-8">
           {dataSort.map((item, index) => (
             <Link to={`/hotel/${item.id}`}>
               <CardHotel
@@ -39,6 +39,7 @@ useEffect(() => {
                 name={item.name}
                 city={item.city}
                 rating={item.rating}
+               
               />
             </Link>
           ))}

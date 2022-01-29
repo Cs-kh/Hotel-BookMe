@@ -33,7 +33,7 @@ const signHandler = (e) => {
 
   return (
     <div className="flex h-screen">
-      <div className="flex w-5/12  justify-center ">
+      <div className="w-full flex lg:w-5/12 justify-center ">
         <div className="w-full h-full">
         <Link to="/" className="">
             <h1 className="mb-16 text-3xl font-semibold w-full mx-10">
@@ -105,13 +105,13 @@ const signHandler = (e) => {
           </form>
         </div>
       </div>
-      <div className="h-full flex-1 w-full relative ">
+      <div className="hidden lg:block lg:h-full lg:flex-1 lg:w-full lg:relative ">
         <div className="w-full h-full absolute bg-gradient-to-b from-zinc-200 to-zinc-900 opacity-60"></div>
         <img src={img10} className="h-full w-full object-cover" alt="" />
         <div className="absolute w-full h-full  top-0  text-white">
-          <div className="w-full h-full  flex flex-col justify-center pl-44 gap-y-2">
-            <h1 className="text-7xl w-96">Find your own hotel</h1>
-            <p className="text-sm opacity-90">
+          <div className="w-full h-full  flex flex-col justify-center pl-10 gap-y-2">
+            <h1 className="text-6xl w-full">Find your own hotel</h1>
+            <p className="text-lg opacity-90 w-[600px] ">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur,
               placeat.
             </p>

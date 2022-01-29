@@ -1,6 +1,6 @@
 import {configureStore , createSlice} from '@reduxjs/toolkit'
   
-const initialState = {items:[]}
+const initialState = {items:[] , logged:false}
  const counterSlice = createSlice({
     name: 'addCard',
     initialState,
@@ -26,6 +26,12 @@ const initialState = {items:[]}
             alert('the hotel is booked')
         }
     },
+    loggedAcount(state){
+        state.logged = false
+    },
+    loginAcount(state){
+        state.logged =true
+    }
     },
   })
 

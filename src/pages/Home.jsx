@@ -47,7 +47,7 @@ const Home = () => {
           <form className="flex px-4 py-2 items-center">
             <div className="flex flex-col border-r-2 mx-2 px-2">
               <p className="text-xs">Location</p>
-              <select name="" id="" className="w-24 text-xs font-medium mt-1 focus:outline-0">
+              <select name="" id="" className="w-24 text-xs font-medium mt-1 focus:outline-0 text-black">
                   <option value="">Iraq</option>
                   <option value="">Erbil</option>
                   <option value="">Suly</option>
@@ -62,10 +62,10 @@ const Home = () => {
               <input type="date" className="focus:outline-0 mt-1 text-xs" />
             </div>
             <div className="flex flex-col mx-2 px-2">
-              <p className="text-xs">Adobe</p>
-              <select name="" id="" className="w-24 text-xs font-medium mt-1 focus:outline-0">
-                  <option value="">Single Room</option>
-                  <option value="">family</option>
+              <p className="text-xs ">Adobe</p>
+              <select name="" id="" className="w-24 text-xs font-medium mt-1 focus:outline-0 text-black">
+                  <option value="" className="text-black">Single Room</option>
+                  <option value="" className="text-black">family</option>
               </select>
             </div>
             <div className="px-4">

@@ -4,13 +4,12 @@ import data from "../data";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
-const price =(a, b) => b.price - a.price;
-const rating =(a, b) => b.rating - a.rating;
+
 
 const Reviews = () => {
 
 
-const [dataSort, setdataSort] = useState(data)
+
 const [data2, setData2] = useState([]);
 const [sortType, setSortType] = useState('albums');
 

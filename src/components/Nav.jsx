@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation , useNavigate } from "react-router-dom";
 
 import logo  from "../assets/card/logo.png";
 import { auth } from "../firebase"; 
@@ -16,10 +16,14 @@ const Nav = () => {
   const [activeTab, setActiveTab] = useState("places");
 const [user , setUser] = useState({})
 const [menu , setMenu] = useState(false)
+const navigate = useNavigate();
 const dispatch = useDispatch()
  onAuthStateChanged(auth, (currentUser) => {
 
 setUser(currentUser)
+if (currentUser) {
+  dispatch(itemsAction.loginAcount())
+}
   })
 
   const location = useLocation();
@@ -57,6 +61,8 @@ loggedAcount()
   }
   const loggedAcount = () => {
     dispatch(itemsAction.loggedAcount())
+    navigate('/')
+    
   }
    return (
     <nav className=" sticky top-0 z-40 bg-slate-200">

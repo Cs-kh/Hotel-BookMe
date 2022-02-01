@@ -18,7 +18,27 @@ const cardInfo = [
     rating: 5,
     price: 10,
     distance:'42km from airport',
-    location:'4252 Sturgeon Drive'
+    location:'4252 Sturgeon Drive',
+    rooms:[
+      {
+        id:1,
+        name:"room 1",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"4"
+      },
+      {
+        id:2,
+        name:"room 2",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"3"
+      },
+      {
+        id:3,
+        name:"room 3",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"2"
+      }
+    ]
   },
   {
     id: "2",
@@ -30,7 +50,27 @@ const cardInfo = [
     rating: 3,
     price: 30,
     distance:'42km from airport',
-    location:'4252 Sturgeon Drive'
+    location:'4252 Sturgeon Drive',
+    rooms:[
+      {
+        id:1,
+        name:"room 1",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"4"
+      },
+      {
+        id:2,
+        name:"room 2",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"3"
+      },
+      {
+        id:3,
+        name:"room 3",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"2"
+      }
+    ]
   },
   {
     id: "3",
@@ -42,7 +82,27 @@ const cardInfo = [
     rating: 2,
     price: 15,
     distance:'42km from airport',
-    location:'4252 Sturgeon Drive'
+    location:'4252 Sturgeon Drive',
+    rooms:[
+      {
+        id:1,
+        name:"room 1",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"4"
+      },
+      {
+        id:2,
+        name:"room 2",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"3"
+      },
+      {
+        id:3,
+        name:"room 3",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"2"
+      }
+    ]
   },
   {
     id: "4",
@@ -54,7 +114,27 @@ const cardInfo = [
     rating: 5,
     price: 30,
     distance:'42km from airport',
-    location:'4252 Sturgeon Drive'
+    location:'4252 Sturgeon Drive',
+    rooms:[
+      {
+        id:1,
+        name:"room 1",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"4"
+      },
+      {
+        id:2,
+        name:"room 2",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"3"
+      },
+      {
+        id:3,
+        name:"room 3",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"2"
+      }
+    ]
   },
   {
     id: "5",
@@ -66,7 +146,27 @@ const cardInfo = [
     rating: 5,
     price: 40,
     distance:'42km from airport',
-    location:'4252 Sturgeon Drive'
+    location:'4252 Sturgeon Drive',
+    rooms:[
+      {
+        id:1,
+        name:"room 1",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"4"
+      },
+      {
+        id:2,
+        name:"room 2",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"3"
+      },
+      {
+        id:3,
+        name:"room 3",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"2"
+      }
+    ]
   },
   {
     id: "6",
@@ -78,7 +178,27 @@ const cardInfo = [
     rating: 4,
     price: 20,
     distance:'42km from airport',
-    location:'4252 Sturgeon Drive'
+    location:'4252 Sturgeon Drive',
+    rooms:[
+      {
+        id:1,
+        name:"room 1",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"4"
+      },
+      {
+        id:2,
+        name:"room 2",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"3"
+      },
+      {
+        id:3,
+        name:"room 3",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"2"
+      }
+    ]
   },
   {
     id: "7",
@@ -90,7 +210,27 @@ const cardInfo = [
     rating: 4,
     price: 80,
     distance:'42km from airport',
-    location:'4252 Sturgeon Drive'
+    location:'4252 Sturgeon Drive',
+    rooms:[
+      {
+        id:1,
+        name:"room 1",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"4"
+      },
+      {
+        id:2,
+        name:"room 2",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"3"
+      },
+      {
+        id:3,
+        name:"room 3",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"2"
+      }
+    ]
   },
   {
     id: "8",
@@ -102,7 +242,27 @@ const cardInfo = [
     rating: 3,
     price:150,
     distance:'42km from airport',
-    location:'4252 Sturgeon Drive'
+    location:'4252 Sturgeon Drive',
+    rooms:[
+      {
+        id:1,
+        name:"room 1",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"4"
+      },
+      {
+        id:2,
+        name:"room 2",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"3"
+      },
+      {
+        id:3,
+        name:"room 3",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"2"
+      }
+    ]
   },
   {
     id: "9",
@@ -115,6 +275,26 @@ const cardInfo = [
     price: 100,
     distance:'42km from airport',
     location:'4252 Sturgeon Drive',
+    rooms:[
+      {
+        id:1,
+        name:"room 1",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"4"
+      },
+      {
+        id:2,
+        name:"room 2",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"3"
+      },
+      {
+        id:3,
+        name:"room 3",
+        description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+        numberRoom:"2"
+      }
+    ]
     
   },
 ];

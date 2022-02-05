@@ -7,7 +7,7 @@ import img6 from "./assets/card/6.jpg";
 import img7 from "./assets/card/7.jpg";
 import img8 from "./assets/card/8.jpg";
 import img9 from "./assets/card/9.jpg";
-const cardInfo = [
+const  cardInfo = [
   {
     id: "1",
     imgs: img1,
@@ -24,19 +24,22 @@ const cardInfo = [
         id:1,
         name:"room 1",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"4"
+        numberRoom:"4",
+        ischeckt:false,
       },
       {
         id:2,
         name:"room 2",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"3"
+        numberRoom:"3",
+        ischeckt:false,
       },
       {
         id:3,
         name:"room 3",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"2"
+        numberRoom:"2",
+        ischeckt:false,
       }
     ]
   },
@@ -56,19 +59,22 @@ const cardInfo = [
         id:1,
         name:"room 1",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"4"
+        numberRoom:"4",
+        ischeckt:false,
       },
       {
         id:2,
         name:"room 2",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"3"
+        numberRoom:"3",
+        ischeckt:false,
       },
       {
         id:3,
         name:"room 3",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"2"
+        numberRoom:"2",
+        ischeckt:false,
       }
     ]
   },
@@ -88,19 +94,22 @@ const cardInfo = [
         id:1,
         name:"room 1",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"4"
+        numberRoom:"4",
+        ischeckt:false,
       },
       {
         id:2,
         name:"room 2",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"3"
+        numberRoom:"3",
+        ischeckt:false,
       },
       {
         id:3,
         name:"room 3",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"2"
+        numberRoom:"2",
+        ischeckt:false,
       }
     ]
   },
@@ -120,19 +129,22 @@ const cardInfo = [
         id:1,
         name:"room 1",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"4"
+        numberRoom:"4",
+        ischeckt:false,
       },
       {
         id:2,
         name:"room 2",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"3"
+        numberRoom:"3",
+        ischeckt:false,
       },
       {
         id:3,
         name:"room 3",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"2"
+        numberRoom:"2",
+        ischeckt:false,
       }
     ]
   },
@@ -152,19 +164,22 @@ const cardInfo = [
         id:1,
         name:"room 1",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"4"
+        numberRoom:"4",
+        ischeckt:false,
       },
       {
         id:2,
         name:"room 2",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"3"
+        numberRoom:"3",
+        ischeckt:false,
       },
       {
         id:3,
         name:"room 3",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"2"
+        numberRoom:"2",
+        ischeckt:false,
       }
     ]
   },
@@ -184,19 +199,22 @@ const cardInfo = [
         id:1,
         name:"room 1",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"4"
+        numberRoom:"4",
+        ischeckt:false,
       },
       {
         id:2,
         name:"room 2",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"3"
+        numberRoom:"3",
+        ischeckt:false,
       },
       {
         id:3,
         name:"room 3",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"2"
+        numberRoom:"2",
+        ischeckt:false,
       }
     ]
   },
@@ -216,19 +234,22 @@ const cardInfo = [
         id:1,
         name:"room 1",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"4"
+        numberRoom:"4",
+        ischeckt:false,
       },
       {
         id:2,
         name:"room 2",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"3"
+        numberRoom:"3",
+        ischeckt:false,
       },
       {
         id:3,
         name:"room 3",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"2"
+        numberRoom:"2",
+        ischeckt:false,
       }
     ]
   },
@@ -248,19 +269,22 @@ const cardInfo = [
         id:1,
         name:"room 1",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"4"
+        numberRoom:"4",
+        ischeckt:false,
       },
       {
         id:2,
         name:"room 2",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"3"
+        numberRoom:"3",
+        ischeckt:false,
       },
       {
         id:3,
         name:"room 3",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"2"
+        numberRoom:"2",
+        ischeckt:false,
       }
     ]
   },
@@ -280,19 +304,22 @@ const cardInfo = [
         id:1,
         name:"room 1",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"4"
+        numberRoom:"4",
+        ischeckt:false,
       },
       {
         id:2,
         name:"room 2",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"3"
+        numberRoom:"3",
+        ischeckt:false,
       },
       {
         id:3,
         name:"room 3",
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-        numberRoom:"2"
+        numberRoom:"2",
+        ischeckt:false,
       }
     ]
     

@@ -55,6 +55,10 @@ if (currentUser) {
     }
   }, [location.pathname]);
 
+useEffect(() => {
+setMenu(false)
+} ,[location.pathname])
+
   const logout = async () => {
     await signOut(auth)
 loggedAcount()
@@ -203,7 +207,7 @@ data.length > 0 && logged?
   
           <div className=" flex pl-10 gap-y-8 text-sm  flex-col md:hidden">
           <div className="">
-        {user?.email}
+        { user?.email !== null ?  <h1 className="pt-4">{user?.email}</h1> : ''} 
       </div>
             {
         user? <button className="" onClick={logout}>Log out</button> :

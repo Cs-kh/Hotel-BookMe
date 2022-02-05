@@ -10,7 +10,9 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { useSelector } from 'react-redux'
 const HotelInfo = () => {
     const param =useParams()
+  
     const bookInfo = useSelector(state => state.cardInfo.bookInfo)
+    const addRoom = useSelector(state => state.cardInfo.addRoom)
     const [card,setCard] = useState([])
     const [bool , setBool] = useState(false)
     const [popUp , setPopUp] = useState(true)
@@ -29,7 +31,7 @@ const navigate =useNavigate()
        }
        cardFilter()
     }, [param.id])
-    const addHotel = (roomsId) => {
+    const addHotel = (roomsId ) => {
     if (bool) {
         dispatch(itemsAction.addInfo({
             id:param.id,
@@ -40,9 +42,12 @@ const navigate =useNavigate()
             distance:card[0].distance,
             location:card[0].location,
             imgs:card[0].imgs,
+        
             roomId:roomsId,
+            
 rooms:card[0].rooms
         }))
+     
     }
     else {
         setPopUp(false)
@@ -65,10 +70,11 @@ rooms:card[0].rooms
         navigate('/login')
     }
    
- const roomFunction = () => {
-    
- }
- roomFunction()
+const cancelRoom = () => {
+    dispatch(itemsAction.cancelRoom())
+}
+
+
     return (
         <div className='mb-12'>
          
@@ -134,7 +140,12 @@ rooms:card[0].rooms
 <h1>{items.name}</h1>
 <p>{items.description}</p>
 <p className='' >Number Of Rooms: {items.numberRoom}</p>
-<button className='bg-slate-900 text-white px-4 py-1 my-2 rounded-sm ' onClick={() => addHotel(items.id)}>Book</button>
+
+
+
+ <button className='bg-slate-900 text-white px-4 py-1 my-2 rounded-sm ' onClick={() => addHotel(items.id )  }>Book</button> 
+
+
 </div>
                             </div>
                         
@@ -157,6 +168,13 @@ rooms:card[0].rooms
            <div className="fixed top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 bg-slate-200 w-56 h-52 opacity-80 flex justify-center items-center flex-col">
    <p className='text-center text-lg pb-4'>The Hotel is Book Befor</p>
    <button type='button' className='px-4 py-1.5 bg-slate-800 text-white '  onClick={cancelBook} >Close</button>
+           </div> 
+        
+        }
+           {!addRoom ? ' ' :
+           <div className="fixed top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 bg-slate-200 w-56 h-52 opacity-80 flex justify-center items-center flex-col">
+   <p className='text-center text-lg pb-4'>Successfully Add Room</p>
+   <button type='button' className='px-4 py-1.5 bg-slate-800 text-white '  onClick={cancelRoom} >Close</button>
            </div> 
         
         }

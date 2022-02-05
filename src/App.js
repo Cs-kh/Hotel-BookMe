@@ -4,8 +4,8 @@ import {
   Routes,
   Route,
   useLocation,
-  useNavigate,
-  Navigate,
+  
+Navigate
 } from "react-router-dom";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
@@ -21,8 +21,10 @@ import { useSelector } from "react-redux";
 function App() {
   const data = useSelector((state) => state.cardInfo.items);
   const location = useLocation();
-  const navigate = useNavigate();
-
+ 
+useEffect(() => {
+window.scrollTo(0,0)
+}, [location.pathname])
   // useEffect(() => {
   //  const home = () => {
   // if (location.pathname === '/book') {

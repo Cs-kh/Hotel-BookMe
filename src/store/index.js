@@ -1,6 +1,6 @@
 import {configureStore , createSlice} from '@reduxjs/toolkit'
-  
-const initialState = {items:[] , logged:false , bookInfo : true}
+
+const initialState = {items:[] , logged:false , bookInfo : true , addRoom : false }
  const counterSlice = createSlice({
     name: 'addCard',
     initialState,
@@ -9,9 +9,9 @@ const initialState = {items:[] , logged:false , bookInfo : true}
         const newItem = action.payload;
         
         const existingItem = state.items.find(item => 
-            item.id === newItem.id
+            item.roomId === newItem.roomId
         )
-        if (!existingItem) {
+        if (!existingItem ) {
             state.items.push({
                 id:newItem.id,
                 name:newItem.name,
@@ -22,9 +22,13 @@ const initialState = {items:[] , logged:false , bookInfo : true}
                 location:newItem.location,
                 imgs:newItem.imgs,
                 rooms:newItem.rooms,
+                isChecked:newItem.isChecked,
 roomId:newItem.roomId
             })
+            state.addRoom = true;
+           
         }
+        
         else {
            state.bookInfo =false
         }
@@ -38,6 +42,19 @@ roomId:newItem.roomId
     },
    bookCancel(state){
 state.bookInfo = true
+    },
+    cancelRoom(state) {
+        state.addRoom = false
+    },
+    removeRoom(state,action) {
+        const hotelRoomId = action.payload
+
+        const findRoomId = state.items.find(item => item.roomId === hotelRoomId
+
+        )
+        if (findRoomId) {
+            state.items.splice(findRoomId ,1)
+        }
     }
     },
   })

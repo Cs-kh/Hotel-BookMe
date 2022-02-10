@@ -16,8 +16,8 @@ const HotelInfo = () => {
   const items = useSelector((state) => state.cardInfo.items);
 
 
-  const doesRoomExist = (roomId) => {
-    return items.find((item) => item.roomId === roomId) ? true : false;
+  const doesRoomExist = (roomId ,hotelId) => {
+    return items.find((item) => item.roomId === roomId && item.id === hotelId) ? true : false;
   }
 
 
@@ -83,7 +83,14 @@ const HotelInfo = () => {
   const cancelRoom = () => {
     dispatch(itemsAction.cancelRoom());
   };
+  const removeRoom = (roomId , hotelId) => {
+    dispatch(itemsAction.RemoveBookRoom({
+      roomId:roomId,
+      hotelId:hotelId
+    }));
 
+    // setRemoveHotelRoom(false);
+  };
   return (
     <div className="mb-12">
       <div className="w-5/6 mx-auto flex flex-col">
@@ -204,13 +211,26 @@ const HotelInfo = () => {
                   <p>{items.description}</p>
                   <p className="">Number Of Rooms: {items.numberRoom}</p>
 
-                  <button
 
-                    className={`bg-slate-900 text-white px-4 py-1 my-2 rounded-sm ${doesRoomExist(items.id) ? "opacity-50 pointer-events-none" : ""}`}  
-                    onClick={() => addHotel(items.id)}
-                  >
-                    Book
-                  </button>
+    <button
+
+      className={`bg-slate-900 text-white px-4 py-1 my-2 rounded-sm ${doesRoomExist(items.id , item.id) ? "opacity-50 pointer-events-none" : ""}`}  
+      onClick={() => addHotel(items.id)}
+    >
+      {doesRoomExist(items.id , item.id) ? "booked" : "book"} 
+    </button> 
+
+
+    {doesRoomExist(items.id,item.id) ?     <button
+
+      className={`ml-3 bg-slate-900 text-white px-4 py-1 my-2 rounded-sm`}  
+      onClick={() => removeRoom(items.id , item.id)}
+    >
+    remove
+    </button>  :''} 
+
+   
+
                 </div>
               </div>
             ))

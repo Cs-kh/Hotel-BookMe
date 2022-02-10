@@ -1,5 +1,5 @@
-import { configureStore, createSelector, createSlice } from "@reduxjs/toolkit";
-import { useSelector } from "react-redux";
+import { configureStore,  createSlice } from "@reduxjs/toolkit";
+
 
 const initialState = {
   items: [],
@@ -15,7 +15,7 @@ const counterSlice = createSlice({
       const newItem = action.payload;
 
       const existingItem = state.items.find(
-        (item) => item.roomId === newItem.roomId
+        (item) => item.roomId === newItem.roomId && item.id === newItem.id
       );
       if (!existingItem) {
         state.items.push({
@@ -58,6 +58,24 @@ const counterSlice = createSlice({
         state.items.splice(findRoomId, 1);
       }
     },
+
+    RemoveBookRoom(state , action){
+      const {roomId , hotelId} = action.payload;
+      const findRoomId = state.items.find(
+        (item) =>  item.roomId === roomId && item.id === hotelId
+      );
+
+      if (findRoomId) {
+        for(var i = 0; i < state.items.length; i++) {
+          if(state.items[i].id === findRoomId.id && state.items[i].roomId === findRoomId.roomId) {
+              state.items.splice(i, 1);
+              break;
+          }
+      }
+       
+      
+      }
+    }
   },
 });
 

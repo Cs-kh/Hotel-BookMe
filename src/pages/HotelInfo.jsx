@@ -14,13 +14,17 @@ const HotelInfo = () => {
   const bookInfo = useSelector((state) => state.cardInfo.bookInfo);
   const addRoom = useSelector((state) => state.cardInfo.addRoom);
   const items = useSelector((state) => state.cardInfo.items);
+  const email = useSelector((state) => state.cardInfo.email);
+  const logged = useSelector((state) => state.cardInfo.logged);
 
-
+console.log(email);
   const doesRoomExist = (roomId ,hotelId) => {
     return items.find((item) => item.roomId === roomId && item.id === hotelId) ? true : false;
   }
-
-
+ const doesEmailExit = (email , roomId , hotelId) => {
+   return items.find((item) => item.email === email && item.roomId === roomId && item.id === hotelId) ? true : false;
+  }
+console.log(doesEmailExit(email));
   console.log(items);
   console.log('Items', items);
   const [card, setCard] = useState([]);
@@ -42,7 +46,7 @@ const HotelInfo = () => {
     cardFilter();
   }, [param.id]);
   const addHotel = (roomsId) => {
-    if (bool) {
+    if (logged) {
       dispatch(
         itemsAction.addInfo({
           id: param.id,
@@ -53,7 +57,7 @@ const HotelInfo = () => {
           distance: card[0].distance,
           location: card[0].location,
           imgs: card[0].imgs,
-
+  email : email,
           roomId: roomsId,
 
           rooms: card[0].rooms,
@@ -68,10 +72,18 @@ const HotelInfo = () => {
     const login = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         setBool(true);
+        addEmail(currentUser.email);
       }
     });
-    login();
+login()
+  
+     
+    
   }, [bool]);
+const addEmail = (email) => {
+  dispatch(itemsAction.addEmail(email));
+}
+
   const cancelBook = () => {
     dispatch(itemsAction.bookCancel());
   };
@@ -221,7 +233,7 @@ const HotelInfo = () => {
     </button> 
 
 
-    {doesRoomExist(items.id,item.id) ?     <button
+    {doesRoomExist(items.id,item.id) && doesEmailExit(email , items.id,item.id)?     <button
 
       className={`ml-3 bg-slate-900 text-white px-4 py-1 my-2 rounded-sm`}  
       onClick={() => removeRoom(items.id , item.id)}

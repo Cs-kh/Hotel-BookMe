@@ -6,6 +6,7 @@ const initialState = {
   logged: false, 
   bookInfo: true,
   addRoom: false,
+  email:''
 };
 const counterSlice = createSlice({
   name: "addCard",
@@ -30,6 +31,7 @@ const counterSlice = createSlice({
           rooms: newItem.rooms,
           isChecked: newItem.isChecked,
           roomId: newItem.roomId,
+          email:newItem.email
         });
         state.addRoom = true;
       } else {
@@ -75,6 +77,10 @@ const counterSlice = createSlice({
        
       
       }
+    },
+    addEmail(state,action){
+      const email= action.payload;
+      state.email = email;
     }
   },
 });

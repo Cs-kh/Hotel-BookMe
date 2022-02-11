@@ -11,7 +11,11 @@ import { itemsAction } from "../store";
 const Nav = () => {
   const data = useSelector(state => state.cardInfo.items)
   const logged = useSelector(state => state.cardInfo.logged)
-
+  const email = useSelector(state => state.cardInfo.email)
+  const items = useSelector(state => state.cardInfo.items)
+  const doesEmailExit = (email) => {
+    return items.find((item) => item.email === email) ? true : false;
+   }
   
   const [activeTab, setActiveTab] = useState("places");
 const [user , setUser] = useState({})
@@ -23,6 +27,7 @@ const dispatch = useDispatch()
 setUser(currentUser)
 if (currentUser) {
   dispatch(itemsAction.loginAcount())
+
 }
   })
 
@@ -78,10 +83,10 @@ loggedAcount()
         </div>
    
         <ul className="hidden md:flex  md:justify-around  md:items-center md:gap-9 md:text-sm ">
-          <li className="">
+          <li className=" w-24 h-8 text-center px-4 py-1">
             <Link
               to="/"
-              className={`py-1 px-3 ${
+              className={`py-1 px-3  ${
                 activeTab === "places" ? " opacity-80" : "opacity-50"
               }`}
               onClick={() => setActiveTab("places")}
@@ -89,7 +94,7 @@ loggedAcount()
               Places
             </Link>
           </li>
-          <li className="">
+          <li className="w-24 h-8 text-center px-4 py-1">
             <Link
               to="/news/featured"
               className={`py-1 px-3 ${
@@ -100,7 +105,7 @@ loggedAcount()
               News
             </Link>
           </li>
-          <li className="">
+          <li className="w-24 h-8 text-center px-4 py-1">
             <Link
               to="/reviews"
               className={`py-1 px-3 ${
@@ -112,8 +117,8 @@ loggedAcount()
             </Link>
           </li>
           {
-data.length > 0 && logged? 
-          <li className="">
+ (data.length > 0 && logged ) && doesEmailExit(email)? 
+          <li className=" w-24 h-8 text-center px-4 py-1">
             <Link
               to="/book"
               className={`py-1 px-3 ${
@@ -155,7 +160,7 @@ data.length > 0 && logged?
       {menu ? <div className={`w-full h-screen transition duration-1000 trnasform  ${menu ? 'translate-x-0 ' : 'translate-x-full '} fixed z-50  bg-slate-100 pt-4  md:hidden`}>
         
         <ul className="flex  justify-around pl-7   gap-y-9 text-sm  flex-col md:hidden">
-            <li className="">
+            <li className="w-24 h-8 px-1 py-1">
               <Link
                 to="/"
                 className={`py-1 px-3 ${
@@ -166,7 +171,7 @@ data.length > 0 && logged?
                 Places
               </Link>
             </li>
-            <li className="">
+            <li className="w-24 h-8 px-1 py-1">
               <Link
                 to="/news/featured"
                 className={`py-1 px-3 ${
@@ -177,7 +182,7 @@ data.length > 0 && logged?
                 News
               </Link>
             </li>
-            <li className="">
+            <li className="w-24 h-8  px-1 py-1">
               <Link
                 to="/reviews"
                 className={`py-1 px-3 ${
@@ -189,8 +194,8 @@ data.length > 0 && logged?
               </Link>
             </li>
             {
-  data.length > 0 && logged? 
-            <li className="">
+ (data.length > 0 && logged ) && doesEmailExit(email)? 
+            <li className="w-24 h-8  px-1 py-1">
               <Link
                 to="/book"
                 className={`py-1 px-3 ${
@@ -205,8 +210,8 @@ data.length > 0 && logged?
          
           </ul>
   
-          <div className=" flex pl-10 gap-y-8 text-sm  flex-col md:hidden">
-          <div className="">
+          <div className=" flex pl-10 gap-y-8 text-sm  flex-col md:hidden px-1">
+          <div className="px-1">
         { user?.email !== null ?  <h1 className="pt-4">{user?.email}</h1> : ''} 
       </div>
             {

@@ -25,7 +25,10 @@ const loginHandler = (e) => {
             const user = await signInWithEmailAndPassword(auth , email,password );
             if (user) {
                 navigate('/')
+                
                 dispatch(itemsAction.loginAcount())
+                dispatch(itemsAction.addEmail(email))
+                
             }
           } catch (error) {
               alert('the email is not exit ')
@@ -36,7 +39,7 @@ const loginHandler = (e) => {
         login()
     }
     else{
-        console.log('set information');
+        console.log('set information'); 
     }
 }
 

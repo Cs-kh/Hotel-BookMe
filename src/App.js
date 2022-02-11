@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "./components/Nav";
 import {
   Routes,
@@ -18,10 +18,19 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Reviews from "./pages/Reviews";
 import { useSelector } from "react-redux";
+
 function App() {
   const data = useSelector((state) => state.cardInfo.items);
+  const email= useSelector((state) => state.cardInfo.email);
   const location = useLocation();
+  
+  
+  const items = useSelector((state) => state.cardInfo.items);
 
+   
+  const doesEmailExit = (email) => {
+    return items.find((item) => item.email === email) ? true : false;
+   }
 useEffect(() => {
 window.scrollTo(0,0)
 }, [location.pathname])
@@ -50,7 +59,7 @@ window.scrollTo(0,0)
         <Route path="/news/featured" element={<News />} />
         <Route path="/news/popular" element={<Popular />} />
         <Route path="/hotel/:id" element={<HotelInfo />} />
-        {data.length > 0 ? 
+        {data.length > 0 && doesEmailExit(email)? 
           <Route path="/book" element={<Book />} />
          : 
          <Route path="/book" element={<Navigate replace to="/" />} />

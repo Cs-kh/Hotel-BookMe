@@ -1,12 +1,25 @@
+
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+
 
 import { itemsAction } from "../store";
 const Book = () => {
   const hotelInfo = useSelector((state) => state.cardInfo.items);
   const [removeHotelRoom, setRemoveHotelRoom] = useState(false);
+  const items = useSelector((state) => state.cardInfo.items);
+  const email = useSelector((state) => state.cardInfo.email);
+
+
   const dispatch = useDispatch();
-  const removeRoom = (roomId) => {
+  const doesEmailExit = (email , roomId , hotelId) => {
+ 
+    return items.find((item) => item.email === email && item.roomId === roomId && item.id === hotelId) ? true : false;
+   }
+ 
+
+ 
+  const removeRoom = (roomId ) => {
     dispatch(itemsAction.removeRoom(roomId));
 
     setRemoveHotelRoom(false);
@@ -19,13 +32,15 @@ const Book = () => {
         <div className="flex gap-x-10 flex-wrap my-6 gap-y-6">
           {hotelInfo?.map((items, index) =>
             items?.rooms?.map((ele) => {
-              if (ele.id === items.roomId) {
+              if (ele.id === items.roomId &&doesEmailExit(email , ele.id,items.id) ) {
                 return (
                   <div className="bg-red-400 w-[300px] h-min rounded-md pb-2 ">
                     <div className="w-full h-[150px] rounded-md">
                       <img src={items.imgs} className="w-full h-full" alt="" />
                     </div>
                     <div className="w-full pt-4 px-4">
+                      
+                     
                       <h1>{ele.name}</h1>
                       <p>{ele.description}</p>
                       <p className="py-1">Number Of Rooms: {ele.numberRoom}</p>

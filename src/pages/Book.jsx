@@ -1,28 +1,19 @@
-
-import React, { useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import axios from "axios";
+import { getHotelBook } from "../store/features/bookSlice";
 
-
-import { itemsAction } from "../store";
 const Book = () => {
-  const hotelInfo = useSelector((state) => state.cardInfo.items);
-  const [removeHotelRoom, setRemoveHotelRoom] = useState(false);
-  const items = useSelector((state) => state.cardInfo.items);
+  const { book, isLoading } = useSelector(
+    (state) => state.hotelRoomBook
+  );
   const email = useSelector((state) => state.cardInfo.email);
 
-
   const dispatch = useDispatch();
-  const doesEmailExit = (email , roomId , hotelId) => {
- 
-    return items.find((item) => item.email === email && item.roomId === roomId && item.id === hotelId) ? true : false;
-   }
- 
 
- 
-  const removeRoom = (roomId ) => {
-    dispatch(itemsAction.removeRoom(roomId));
-
-    setRemoveHotelRoom(false);
+  const removeRoom = async (roomId) => {
+    await axios.delete(`http://localhost:3009/api/places/book/${roomId}`);
+    dispatch(getHotelBook());
   };
   return (
     <div>
@@ -30,67 +21,38 @@ const Book = () => {
         <h1 className="text-3xl text-center py-4">Book Hotel</h1>
 
         <div className="flex gap-x-10 flex-wrap my-6 gap-y-6">
-          {hotelInfo?.map((items, index) =>
-            items?.rooms?.map((ele) => {
-              if (ele.id === items.roomId &&doesEmailExit(email , ele.id,items.id) ) {
+          {isLoading && <h1>Loading...</h1>}
+          <div className="py-10 my-10  flex gap-x-16 gap-y-10 flex-col md:flex-row  lg:flex-row flex-wrap justify-start items-start ">
+            {book?.map((item) => {
+              if (item.userEmail === email) {
                 return (
-                  <div className="bg-red-400 w-[300px] h-min rounded-md pb-2 ">
+                  <div className="bg-red-400 w-[300px] h-min rounded-md ">
                     <div className="w-full h-[150px] rounded-md">
-                      <img src={items.imgs} className="w-full h-full" alt="" />
+                      <img
+                        src={`http://localhost:3009/api/upload/${item.image}`}
+                        className="w-full h-full"
+                        alt=""
+                      />
                     </div>
                     <div className="w-full pt-4 px-4">
-                      
-                     
-                      <h1>{ele.name}</h1>
-                      <p>{ele.description}</p>
-                      <p className="py-1">Number Of Rooms: {ele.numberRoom}</p>
+                      <h1>{item.roomName}</h1>
+                      <p>{item.roomDescription}</p>
+                      <p className="">Room Type: {item.roomType}</p>
 
                       <button
-                        className="bg-black py-1.5 my-1 px-3 text-white"
-                        onClick={() => setRemoveHotelRoom(true)}
+                        className={`ml-3 bg-slate-900 text-white px-4 py-1 my-2 rounded-sm`}
+                        onClick={() => removeRoom(item.id)}
                       >
-                        Remove
+                        remove
                       </button>
-                      {!removeHotelRoom ? (
-                        " "
-                      ) : (
-                        <div className="fixed top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 bg-slate-200 w-56 h-52 opacity-80 flex justify-center items-center flex-col">
-                          <p className="text-center text-lg pb-4">
-                            remove Hote !!!!
-                          </p>
-                          <div className="flex gap-x-4">
-                            <button
-                              type="button"
-                              className="px-4 py-1.5 bg-slate-800 text-white "
-                              onClick={() => setRemoveHotelRoom(false)}
-                            >
-                              Cancel
-                            </button>
-                            <button
-                              type="button"
-                              className="px-4 py-1.5 bg-slate-800 text-white "
-                              onClick={() => removeRoom(ele.id)}
-                            >
-                              Remove
-                            </button>
-                          </div>
-                        </div>
-                      )}
                     </div>
-                    {/* </div>
-             <div className="">
-                 <h1>{ele.id}</h1>
-                 <h1>{ele.name}</h1>
-                 <h1>{ele.numberRoom}</h1>
-             </div>          */}
                   </div>
                 );
-              }else {
-                return null
+              } else {
+                return null;
               }
-            })
-
-          )}
+            })}
+          </div>
         </div>
       </div>
     </div>

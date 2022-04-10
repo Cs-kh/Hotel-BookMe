@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation , useNavigate } from "react-router-dom";
+import { Link, useLocation  } from "react-router-dom";
 
 import logo  from "../assets/card/logo.png";
 import { auth } from "../firebase"; 
@@ -9,18 +9,18 @@ import {AiOutlineMenu} from 'react-icons/ai'
 import {AiOutlineClose} from 'react-icons/ai'
 import { itemsAction } from "../store";
 const Nav = () => {
-  const data = useSelector(state => state.cardInfo.items)
-  const logged = useSelector(state => state.cardInfo.logged)
+  const {book} = useSelector((state) => state.hotelRoomBook);
+    const logged = useSelector(state => state.cardInfo.logged)
   const email = useSelector(state => state.cardInfo.email)
-  const items = useSelector(state => state.cardInfo.items)
+ 
   const doesEmailExit = (email) => {
-    return items.find((item) => item.email === email) ? true : false;
+    return book.find((item) => item.userEmail === email) ? true : false;
    }
   
   const [activeTab, setActiveTab] = useState("places");
 const [user , setUser] = useState({})
 const [menu , setMenu] = useState(false)
-const navigate = useNavigate();
+
 const dispatch = useDispatch()
  onAuthStateChanged(auth, (currentUser) => {
 
@@ -70,7 +70,7 @@ loggedAcount()
   }
   const loggedAcount = () => {
     dispatch(itemsAction.loggedAcount())
-    navigate('/')
+    
     
   }
    return (
@@ -117,7 +117,7 @@ loggedAcount()
             </Link>
           </li>
           {
- (data.length > 0 && logged ) && doesEmailExit(email)? 
+ (book.length > 0 && logged ) && doesEmailExit(email) ? 
           <li className=" w-24 h-8 text-center px-4 py-1">
             <Link
               to="/book"
@@ -194,8 +194,8 @@ loggedAcount()
               </Link>
             </li>
             {
- (data.length > 0 && logged ) && doesEmailExit(email)? 
-            <li className="w-24 h-8  px-1 py-1">
+ (book.length > 0 && logged ) && doesEmailExit(email)? 
+            <li className="w-24 h-8  px-1 py-1 mb-6">
               <Link
                 to="/book"
                 className={`py-1 px-3 ${

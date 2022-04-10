@@ -40,8 +40,12 @@ const  cardInfo = [
         description:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
         numberRoom:"2",
         ischeckt:false,
-      }
-    ]
+      },
+    ],
+    coordinate : {
+  lat :  35.5650, 
+  lng:45.3688
+  },
   },
   {
     id: "2",
@@ -77,6 +81,11 @@ const  cardInfo = [
         ischeckt:false,
       }
     ]
+    ,
+    coordinate : {
+  lat :  -24.623321, 
+  lng:25.832051
+  },
   },
   {
     id: "3",
@@ -89,6 +98,11 @@ const  cardInfo = [
     price: 15,
     distance:'42km from airport',
     location:'4252 Sturgeon Drive',
+    
+    coordinate : {
+  lat :  48.1834, 
+  lng:16.3765
+  },
     rooms:[
       {
         id:1,
@@ -124,6 +138,11 @@ const  cardInfo = [
     price: 30,
     distance:'42km from airport',
     location:'4252 Sturgeon Drive',
+    
+    coordinate : {
+      lat :  52.5252, 
+      lng:13.4146
+      },
     rooms:[
       {
         id:1,
@@ -159,6 +178,10 @@ const  cardInfo = [
     price: 40,
     distance:'42km from airport',
     location:'4252 Sturgeon Drive',
+    coordinate : {
+      lat :  55.8224, 
+      lng:37.6468
+      },
     rooms:[
       {
         id:1,
@@ -194,6 +217,10 @@ const  cardInfo = [
     price: 20,
     distance:'42km from airport',
     location:'4252 Sturgeon Drive',
+    coordinate : {
+      lat :  30.1212, 
+      lng:31.4020
+      },
     rooms:[
       {
         id:1,
@@ -229,6 +256,10 @@ const  cardInfo = [
     price: 80,
     distance:'42km from airport',
     location:'4252 Sturgeon Drive',
+    coordinate : {
+      lat : 51.5113, 
+      lng:0.1854
+      },
     rooms:[
       {
         id:1,
@@ -264,6 +295,10 @@ const  cardInfo = [
     price:150,
     distance:'42km from airport',
     location:'4252 Sturgeon Drive',
+    coordinate : {
+      lat : 35.674705, 
+      lng:139.686465
+      },
     rooms:[
       {
         id:1,
@@ -299,6 +334,10 @@ const  cardInfo = [
     price: 100,
     distance:'42km from airport',
     location:'4252 Sturgeon Drive',
+    coordinate : {
+      lat : 48.8557, 
+      lng:2.2929
+      },
     rooms:[
       {
         id:1,
